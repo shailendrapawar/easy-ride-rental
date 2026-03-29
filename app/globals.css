@@ -121,10 +121,22 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
+}
+
+:root {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root::-webkit-scrollbar {
+  display: none;
 }

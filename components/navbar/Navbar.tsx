@@ -17,7 +17,7 @@ const Navbar = () => {
     const [toggleMobileNav, setToggleMobileNav] = useState(false)
 
     return (
-        <header className="h-18  flex justify-between items-center  relative z-50"
+        <header className="h-18 flex justify-between items-center z-50 sticky top-0"
             style={{
                 background: Theme.bgSurface,
                 border: `1px solid ${Theme.borderDefault}`
@@ -34,10 +34,11 @@ const Navbar = () => {
 
 
             {/* mobile-nav */}
-            {toggleMobileNav && (<nav className="mobile-nav h-[calc(100vh-64px)] bg-inherit w-full opacity-80 absolute top-full md:hidden flex justify-center items-center px-10">
+            {toggleMobileNav && (<nav className="mobile-nav h-[calc(100vh-64px)] bg-inherit w-full opacity-95 background absolute top-full md:hidden flex justify-center items-center px-10">
                 <section className=" h-[50%] w-full max-w-60 flex flex-col items-center justify-evenly ">
                     {navItems?.map((v, i) => {
                         return <span
+                            key={i}
                             className="w-full flex justify-center items-center h-10 rounded-full cursor-pointer opacity-85 hover:opacity-100"
                             onClick={() => setToggleMobileNav(false)}
                         >{v.title}</span>
