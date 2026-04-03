@@ -17,7 +17,7 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
                 ease: "easeOut",
             }}
             whileHover={{ y: -6 }}
-            className="aspect-[4/5] flex flex-col rounded-xl w-full relative overflow-hidden group"
+            className="aspect-4/5 flex flex-col rounded-xl w-full relative overflow-hidden group"
             style={{
                 background: Theme.bgSurface,
                 border: `1px solid ${Theme.borderDefault}`,
