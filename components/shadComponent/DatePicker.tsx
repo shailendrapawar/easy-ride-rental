@@ -19,16 +19,18 @@ export function DatePicker() {
 
 
     return (
-        <Field className="mx-auto w-ful"
+        <Field className="mx-auto w-ful border-2 rounded-full"
             style={{
-                background: Theme.bgBase
+                background: Theme.bgBase,
+                border: `3px solid ${Theme.primary}`,
+                // color: Theme.textPrimary
             }}
         >
             <Popover
 
             >
                 <PopoverTrigger asChild
-                    className="h-12 rounded-full px-5 focus:ring-amber-400 focus:ring-2"
+                    className="h-12 rounded-full px-5 "
                     style={{
                         border: `1px solid ${Theme.borderDefault}`,
                         background: Theme.bgSurface
@@ -38,9 +40,12 @@ export function DatePicker() {
                         variant="outline"
                         id="date-picker-simple"
                         className="justify-start font-normal"
+                        style={{
+                            color: Theme.textPrimary
+                        }}
                     >
                         {date ? format(date, "PPP") : <span style={{
-                            color: Theme.textDisabled
+                            color: Theme.textMuted
                         }}>DD - MM - YY</span>}
                     </Button>
                 </PopoverTrigger>

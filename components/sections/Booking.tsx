@@ -16,7 +16,7 @@ const Booking = () => {
         startDate: "",
         endDate: ""
     })
-    
+
     return (
         <section className="w-full h-auto flex flex-col items-center p-5 gap-5 py-10"
             style={{ background: Theme.bgSurface }}
@@ -30,34 +30,35 @@ const Booking = () => {
                     background: Theme.bgBase,
                     border: `1px solid ${Theme.borderDefault}`,
                     backdropFilter: "blur(50px)",
-                    boxShadow: `1px 1px 25px ${Theme.primary+80}`
+                    boxShadow: `1px 1px 25px ${Theme.primary + 80}`
                 }}
 
             >
 
                 <div className=" w-full grid grid-cols-1 sm:grid-cols-3 gap-8">
                     <div className=" gap-2 h-auto flex flex-col ">
-                        <span className="flex gap-3"><b><Motorbike className="size-5" style={{ color: Theme.primary }} /></b>Vehicle</span>
+                        <span className="flex gap-3" style={{ color: Theme.textDisabled }}><b><Motorbike className="size-5" style={{ color: Theme.primary }} /></b>Vehicle</span>
                         <SelectMenu items={vehiclesList} setItems={() => { }} placeholder={"Select vehicle"} />
 
                     </div>
 
                     <div className=" gap-2 h-auto flex flex-col ">
-                        <span className="flex gap-3"><b><Clock4 className="size-5" style={{ color: Theme.primary }} /></b>Duration</span>
+                        <span className="flex gap-3" style={{ color: Theme.textDisabled }}><b><Clock4 className="size-5" style={{ color: Theme.primary }} /></b>Duration</span>
                         <SelectMenu items={hourList} setItems={() => { }} placeholder={"Select duration"} />
 
                     </div>
 
                     <div className=" gap-2 h-auto flex flex-col">
-                        <span className="flex gap-3"><b><CalendarDays className="size-5" style={{ color: Theme.primary }} /></b>Select your dates</span>
+                        <span className="flex gap-3" style={{ color: Theme.textDisabled }}><b><CalendarDays className="size-5" style={{ color: Theme.primary }} /></b>Select your dates</span>
                         <DatePicker />
                     </div>
 
                 </div>
 
-                <Button className="h-10 cursor-pointer"
+                <Button className="h-10 cursor-pointer font-bold"
                     style={{
-                        background: Theme.primary
+                        background: Theme.primary,
+                        color: Theme.textDark
                     }}
                 >
                     Confirm Booking
