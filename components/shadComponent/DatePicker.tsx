@@ -19,11 +19,9 @@ export function DatePicker() {
 
 
     return (
-        <Field className="mx-auto w-ful border-2 rounded-full"
+        <Field className="mx-auto w-ful border-2 rounded-full border-none"
             style={{
-                background: Theme.bgBase,
-                border: `3px solid ${Theme.primary}`,
-                // color: Theme.textPrimary
+                background: Theme.bgSubtle,
             }}
         >
             <Popover
@@ -33,7 +31,7 @@ export function DatePicker() {
                     className="h-12 rounded-full px-5 "
                     style={{
                         border: `1px solid ${Theme.borderDefault}`,
-                        background: Theme.bgSurface
+                        background: Theme.bgSubtle,
                     }}
                 >
                     <Button

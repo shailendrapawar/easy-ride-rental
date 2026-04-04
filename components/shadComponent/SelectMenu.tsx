@@ -16,7 +16,10 @@ export function SelectMenu(
 
     return (
         <Field className="w-full rounded-full "
-            style={{ border: `3px  solid ${Theme.primary}`, }}
+            style={{
+                // border: `3px  solid ${Theme.borderDefault}`,
+                background: Theme.bgSubtle
+            }}
         >
             <Select>
                 <SelectTrigger className=" py-6  px-5 ring-0 border-none focus:ring-0"
@@ -24,7 +27,7 @@ export function SelectMenu(
                 >
                     <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
-                <SelectContent className=" border-none focus:ring-0 ">
+                <SelectContent className=" border-none focus:ring-0 cursor-pointer">
                     <SelectGroup className="w-full">
                         {
                             items?.map((v: any, i: number) => {
