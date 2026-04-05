@@ -30,8 +30,8 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1 }}
-            className="h-auto w-full py-10 px-5 flex flex-col gap-5 relative"
-            style={{ background: Theme.bgBase }}
+            className="h-auto w-full py-15 px-5 flex flex-col gap-5 relative"
+            style={{ background: Theme.bgElevated }}
         >
             {/* Heading */}
             <h1 className="text-center text-3xl">

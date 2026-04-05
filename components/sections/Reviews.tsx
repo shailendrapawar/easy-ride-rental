@@ -30,7 +30,7 @@ const Reviews = () => {
             transition={{ duration: 0.6 }}
             className="w-full h-auto flex flex-col items-center p-5 gap-5 py-20 relative"
             style={{
-                backgroundColor: Theme.bgBase
+                backgroundColor: Theme.bgOverlay
             }}
         >
 

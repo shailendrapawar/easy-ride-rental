@@ -41,7 +41,7 @@ const Booking = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1 }}
             className="w-full h-auto flex flex-col items-center px-6 gap-5 py-20 relative"
-            style={{ background: Theme.bgSurface }}
+            style={{ background: Theme.bgBase }}
         >
             {/* Heading */}
             <h1 className="text-center text-2xl font-bold">
@@ -60,7 +60,7 @@ const Booking = () => {
                 transition={{ duration: 0.5 }}
                 className="main-card w-full flex flex-col py-10 px-10 gap-6 rounded-4xl max-w-200 mt-10"
                 style={{
-                    background: Theme.bgBase,
+                    background: Theme.bgSurface,
                     border: `1px solid ${Theme.borderDefault}`,
                     backdropFilter: "blur(50px)",
                     boxShadow: `1px 1px 50px ${Theme.primary + 60}`

@@ -29,7 +29,7 @@ const ReviewCard = ({ data, index }: any) => {
     return (
         <section className="flex flex-col items- justify-center gap-3 px-6 py-5  rounded-xl"
             style={{
-                background: Theme.bgOverlay,
+                background: Theme.bgBase,
                 border: `1px solid ${Theme.borderDefault}`
             }}
         >
@@ -40,7 +40,11 @@ const ReviewCard = ({ data, index }: any) => {
                 {data?.text}
             </div>
 
-            <h3 className="font-bold text-md">{data?.author}</h3>
+            <h3 className="font-bold text-md"
+            style={{
+                color:Theme.textDisabled
+            }}
+            > ~ {data?.author}</h3>
 
         </section>
     )

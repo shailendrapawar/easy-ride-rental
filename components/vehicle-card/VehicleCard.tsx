@@ -75,7 +75,7 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
                     delay: index * 0.08 + 0.3,
                     duration: 0.3,
                 }}
-                className="relative h-[30%] flex flex-col justify-center px-4 py-2 gap-2"
+                className="relative h-[30%] flex flex-col justify-center px-4 py-2 gap-3"
             >
                 {/* TITLE */}
                 <div className="h-[30%] relative flex items-center">

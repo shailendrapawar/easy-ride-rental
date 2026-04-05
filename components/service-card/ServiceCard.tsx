@@ -1,8 +1,8 @@
 import { Theme } from "@/app/data/theme"
 const ServiceCard = ({ data, curr, setCurr }: { data: any, curr: any, setCurr: any }) => {
     return (
-        <div className={`w-full flex flex-col items-center gap-4 py-5 px-5 justify-center rounded-xl cursor-pointer `}
-            style={{ background: Theme.bgSurface, border: `1px solid ${Theme.bgSubtle}` }}
+        <div className={`w-full h-full flex flex-col items-center gap-4 py-5 px-5 justify-center rounded-xl cursor-pointer `}
+            style={{ background: Theme.bgBase, border: `1px solid ${Theme.bgSubtle}` }}
             onMouseEnter={() => setCurr(data)}
             onMouseLeave={() => setCurr(null)}
         >
