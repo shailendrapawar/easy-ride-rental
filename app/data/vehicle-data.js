@@ -36,6 +36,22 @@ export const AppVehicles = [
         category: "bike",
         images: ["https://res.cloudinary.com/dju3ncpv6/image/upload/v1775062670/easy-ride-rentals/hunter-1_sio5qg.jpg"],
         meta: {
+            mileage: "30",
+            mileageUnit: "km/l",
+            variant: "petrol"
+        },
+        price: {
+            daily: 500,
+            hourly: 100
+        }
+    },
+
+    {
+        brand: "Bajaj",
+        model: "NS 200",
+        category: "bike",
+        images: ["https://res.cloudinary.com/dju3ncpv6/image/upload/v1775375415/easy-ride-rentals/bajaj-ns-200-1_xmmbgn.avif"],
+        meta: {
             mileage: "25",
             mileageUnit: "km/l",
             variant: "petrol"

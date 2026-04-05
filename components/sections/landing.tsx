@@ -25,7 +25,7 @@ const Landing = () => {
     }, [])
 
     return (
-        <section className=" h-auto min-h-[calc(100vh-80px)] flex justify-between items-center px-8 sm:px-15 md:px-20">
+        <section className=" h-auto min-h-[calc(100vh-80px)] flex justify-between items-center px-8 sm:px-15 md:px-20 relative">
 
             {/* Background image with smooth crossfade */}
             <AnimatePresence mode="wait">
