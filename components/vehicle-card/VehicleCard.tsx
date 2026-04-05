@@ -13,7 +13,7 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{
                 delay: index * 0.08,
-                duration: 0.4,
+                duration: 1,
                 ease: "easeOut",
             }}
             whileHover={{ y: -6 }}
