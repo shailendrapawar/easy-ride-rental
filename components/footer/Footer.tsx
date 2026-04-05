@@ -7,11 +7,12 @@ import { MapPin, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 import { CompanyData } from "@/app/data/company-data"
 
+
 const Footer = () => {
 
     const description = "Premium two-wheeler rentals for city explorers. Affordable, safe, and always ready to roll."
     const address = "MG Road, Central Hub, Bengaluru 560001"
-
+    const { instagram, google } = CompanyData.socials
     // animations
     const container = {
         hidden: {},

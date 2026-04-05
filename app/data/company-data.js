@@ -1,4 +1,8 @@
 export const CompanyData = {
+    prices: {
+        unit: "₹",
+        base: 99
+    },
     contact: [
         {
             name: "Shubham Negi",
@@ -37,5 +41,11 @@ export const CompanyData = {
         }
     ],
 
+    socials: {
+        instagram: "https://www.instagram.com/easy_ride_rental_07?igsh=NzBqOTBoOWhydDlu",
+        google: "https://share.google/8fzUy8eGUI09xeqQ1"
+    },
+
     vehicleTypes: ["Scooty🛵", "Bike🏍️", "Car🚗"]
+
 }

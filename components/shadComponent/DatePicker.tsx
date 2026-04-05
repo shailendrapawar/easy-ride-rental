@@ -13,9 +13,14 @@ import {
 } from "@/components/ui/popover"
 
 import { Theme } from "@/app/data/theme"
-export function DatePicker() {
+
+
+export function DatePicker(
+    { setItems }:
+        { setItems: any }
+) {
     const date = new Date()
-    const [dates, setDate] = React.useState([date, date])
+    const [dates, setDates] = React.useState([date])
 
 
     return (
@@ -47,17 +52,14 @@ export function DatePicker() {
                         }}>DD - MM - YY</span>}
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-full p-0" align="start"
-
-                >
+                <PopoverContent className="w-full p-0" align="start">
                     <Calendar
                         mode="multiple"
-
                         selected={dates}
-                        // onSelect={(e) => {
-                        //     dates.push(e)
-                        // }}
-                        defaultMonth={new Date}
+                        onSelect={(e) => {
+                            setDates(e || [])
+                            setItems("dates", e)
+                        }}
                     />
                 </PopoverContent>
             </Popover>

@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/select"
 
 export function SelectMenu(
-    { items = [], setItems, placeholder = "Select options" }
-        : { items: any, setItems: any, placeholder: String }) {
+    { data = [], setItems, sourceKey, placeholder = "Select options" }:
+        { data: string[], setItems: any, sourceKey: string, placeholder: String }) {
 
     return (
         <Field className="w-full rounded-full "
@@ -21,17 +21,30 @@ export function SelectMenu(
                 background: Theme.bgSubtle
             }}
         >
-            <Select>
+            <Select
+
+                onValueChange={(v) => {
+                    setItems(sourceKey, v)
+                }}
+            >
                 <SelectTrigger className=" py-6  px-5 ring-0 border-none focus:ring-0"
                     style={{ color: Theme.textPrimary }}
+                    onChange={(e) => {
+                        console.log("changes")
+                    }}
                 >
                     <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
-                <SelectContent className=" border-none focus:ring-0 cursor-pointer">
-                    <SelectGroup className="w-full">
+                <SelectContent className=" border-none focus:ring-0 cursor-pointer"
+                >
+                    <SelectGroup className={"w-full"}
+                    >
                         {
-                            items?.map((v: any, i: number) => {
-                                return <SelectItem value={v} key={i}>{v}</SelectItem>
+                            data?.map((v: any, i: number) => {
+                                return <SelectItem value={v} key={i}
+                                    onClick={() => {
+                                    }}
+                                >{v}</SelectItem>
                             })
                         }
                     </SelectGroup>

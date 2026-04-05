@@ -3,15 +3,15 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Theme } from "@/app/data/theme"
 import { Button } from "../ui/button"
-import { MoveRight, Zap } from "lucide-react"
+import { Command, MoveRight, Zap } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { CompanyData } from "@/app/data/company-data"
 
 const Landing = () => {
 
-    const images = CompanyData.images
-    const vehicles = CompanyData.vehicleTypes
+    const { images, vehicleTypes, prices } = CompanyData
+
 
     const [curr, setCurr] = useState(1)
 
@@ -36,10 +36,10 @@ const Landing = () => {
                     className="absolute inset-0 z-5 "
                 >
                     <Image
-                        src={images[curr].src}
+                        src={images[curr]?.src}
                         fill
                         className="object-cover "
-                        alt={images[curr].alt || "landing page images"}
+                        alt={images[curr]?.alt || "landing page images"}
                     />
                 </motion.div>
 
@@ -109,7 +109,7 @@ const Landing = () => {
                     Need a{" "}
                     <AnimatePresence mode="wait">
                         <motion.span
-                            key={vehicles[curr]}
+                            key={vehicleTypes[curr]}
                             initial={{ opacity: 0, y: -40 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 40 }}
@@ -117,7 +117,7 @@ const Landing = () => {
                             className="inline-block"
                             style={{ color: Theme.primary }}
                         >
-                            {vehicles[curr]}
+                            {vehicleTypes[curr]}
                         </motion.span>
                     </AnimatePresence>
                     <br />
@@ -138,12 +138,54 @@ const Landing = () => {
 
                 {/* Price */}
                 <motion.div
-                    className="mt-10"
+                    className="mt-10 flex items-end gap-1"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.7, ease: "backOut" }}
                 >
-                    <b className="text-4xl sm:text-5xl" style={{ color: Theme.primary }}>$99</b>/hr
+                    {/* Shimmer Wrapper */}
+                    <div className="relative overflow-hidden inline-block">
+
+                        {/* Price */}
+                        <b
+                            className="text-4xl sm:text-5xl relative z-10"
+                            style={{ color: Theme.primary }}
+                        >
+                            {prices.unit}{prices.base}
+                        </b>
+
+                        {/* Shimmer layer */}
+                        <motion.div
+                            className="absolute inset-0"
+                            style={{
+                                background: `linear-gradient(
+          120deg,
+          transparent 20%,
+          ${Theme.primary}40 50%,
+          transparent 80%
+        )`
+                            }}
+                            initial={{ x: "-100%" }}
+                            animate={{ x: "100%" }}
+                            transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                repeatDelay: 1.5
+                            }}
+                        />
+                    </div>
+
+                    {/* /hr */}
+                    <motion.span
+                        className="text-lg"
+                        style={{ color: Theme.textMuted }}
+                        initial={{ opacity: 0, x: 10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1 }}
+                    >
+                        /hr
+                    </motion.span>
                 </motion.div>
 
                 {/* Buttons */}
@@ -162,7 +204,7 @@ const Landing = () => {
 
                     <Button
                         className="h-full w-30 sm:w-40 rounded-full cursor-pointer transition-all ease-in-out text-yellow-400 hover:bg-yellow-400 hover:text-black shadow-amber-400"
-                        style={{ border: `2px solid ${Theme.primary}` }}
+                        style={{ border: `2px solid ${Theme.primary}`, background: Theme.primary,color:Theme.textDark }}
                     >
                         Book Now <MoveRight />
                     </Button>
