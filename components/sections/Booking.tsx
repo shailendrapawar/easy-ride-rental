@@ -30,8 +30,6 @@ const Booking = () => {
     }
 
     const handleRequestBooking = () => {
-        console.log("clicked")
-        console.log(formData)
         redirectToWhatsApp(CompanyData.bookingRequest.primaryContact.number, formData)
     }
 
@@ -43,6 +41,7 @@ const Booking = () => {
             transition={{ duration: 0.4 }}
             className="w-full h-auto flex flex-col items-center px-6 gap-5 py-20 relative"
             style={{ background: Theme.bgBase }}
+            id="booking"
         >
 
             {/* Heading */}

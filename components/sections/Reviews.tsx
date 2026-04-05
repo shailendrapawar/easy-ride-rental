@@ -32,6 +32,7 @@ const Reviews = () => {
             style={{
                 backgroundColor: Theme.bgOverlay
             }}
+            id={"reviews"}
         >
 
             {/* Heading */}

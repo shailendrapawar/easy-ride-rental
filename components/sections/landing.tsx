@@ -204,7 +204,7 @@ const Landing = () => {
 
                     <Button
                         className="h-full w-30 sm:w-40 rounded-full cursor-pointer transition-all ease-in-out text-yellow-400 hover:bg-yellow-400 hover:text-black shadow-amber-400"
-                        style={{ border: `2px solid ${Theme.primary}`, background: Theme.primary,color:Theme.textDark }}
+                        style={{ border: `2px solid ${Theme.primary}`, background: Theme.primary, color: Theme.textDark }}
                     >
                         Book Now <MoveRight />
                     </Button>

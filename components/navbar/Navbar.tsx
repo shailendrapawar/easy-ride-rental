@@ -4,14 +4,16 @@ import { CalendarCheck, Menu, X } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { motion, AnimatePresence } from "framer-motion"
+// import { goTo } from "@/lib/scroller"
 
 const Navbar = () => {
 
+
     const [navItems] = useState([
-        { title: "Vehicles" },
-        { title: "Features" },
-        { title: "Testimonials" },
-        { title: "Contact" }
+        { title: "Vehicles", scrollKey: "vehicles" },
+        { title: "Features", scrollKey: "services" },
+        { title: "Testimonials", scrollKey: "reviews" },
+        { title: "Contact", scrollKey: "booking" }
     ])
 
     const [toggleMobileNav, setToggleMobileNav] = useState(false)
@@ -39,6 +41,9 @@ const Navbar = () => {
                         key={i}
                         whileHover={{ y: -2 }}
                         className="min-w-20 flex justify-center cursor-pointer"
+                        onClick={() => {
+
+                        }}
                     >
                         {v.title}
                     </motion.span>
@@ -72,7 +77,12 @@ const Navbar = () => {
                                     key={i}
                                     whileTap={{ scale: 0.95 }}
                                     className="w-full flex justify-center items-center h-10 rounded-full cursor-pointer opacity-85 hover:opacity-100"
-                                    onClick={() => setToggleMobileNav(false)}
+                                    onClick={() => {
+
+                                        console.log(v?.scrollKey)
+                                        setToggleMobileNav(false)
+
+                                    }}
                                 >
                                     {v.title}
                                 </motion.span>

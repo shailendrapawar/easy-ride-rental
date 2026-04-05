@@ -32,6 +32,7 @@ const Services = () => {
             transition={{ duration: 1 }}
             className="h-auto w-full py-15 px-5 flex flex-col gap-5 relative"
             style={{ background: Theme.bgElevated }}
+            id={"services"}
         >
             {/* Heading */}
             <h1 className="text-center font-bold  text-3xl">
