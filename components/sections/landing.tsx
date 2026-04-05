@@ -1,25 +1,23 @@
 "use client"
 import { useEffect, useState } from "react"
-import { LandingCarousal } from "../landing-carousal/LandingCarousal"
 import Image from "next/image"
 import { Theme } from "@/app/data/theme"
 import { Button } from "../ui/button"
 import { MoveRight, Zap } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
-const Landing = () => {
-    const [images] = useState([
-        "https://res.cloudinary.com/dju3ncpv6/image/upload/v1774784087/easy-ride-rentals/landing-3_bgsywd.jpg",
-        "https://res.cloudinary.com/dju3ncpv6/image/upload/v1774784074/easy-ride-rentals/landing-2_hvtgtq.jpg",
-        "https://res.cloudinary.com/dju3ncpv6/image/upload/v1774784065/easy-ride-rentals/landing-1_mdudaw.jpg"
-    ])
+import { CompanyData } from "@/app/data/company-data"
 
-    const [vehicles] = useState(["Scooty🛵", "Bike🏍️", "Car🚗"])
+const Landing = () => {
+
+    const images = CompanyData.images
+    const vehicles = CompanyData.vehicleTypes
+
     const [curr, setCurr] = useState(1)
 
     useEffect(() => {
         const t1 = setInterval(() => {
-            setCurr(prev => (prev + 1) % images.length)
+            setCurr(prev => (prev + 1) % images?.length)
         }, 5000);
         return () => clearInterval(t1)
     }, [])
@@ -28,7 +26,7 @@ const Landing = () => {
         <section className=" h-auto min-h-[calc(100vh-80px)] flex justify-between items-center px-8 sm:px-15 md:px-20 relative">
 
             {/* Background image with smooth crossfade */}
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" >
                 <motion.div
                     key={curr}
                     initial={{ opacity: 0 }}
@@ -38,12 +36,13 @@ const Landing = () => {
                     className="absolute inset-0 z-5 "
                 >
                     <Image
-                        src={images[curr]}
+                        src={images[curr].src}
                         fill
                         className="object-cover "
-                        alt="landing images"
+                        alt={images[curr].alt || "landing page images"}
                     />
                 </motion.div>
+
             </AnimatePresence>
 
             {/* Gradient overlay */}
