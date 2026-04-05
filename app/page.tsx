@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import Booking from "@/components/sections/Booking";
 import Fleet from "@/components/sections/Fleet";
 import Landing from "@/components/sections/landing";
@@ -13,6 +14,7 @@ export default function Home() {
       <Services />
       <Booking />
       <Reviews />
+      <Footer />
     </div>
   );
 }
