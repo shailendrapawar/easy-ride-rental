@@ -20,7 +20,7 @@ const Fleet = () => {
 
     }, [curr])
     return (
-        <section className="w-full h-auto py-10 px-5 relative"
+        <section className="w-full h-auto py-15 px-5 relative"
             style={{ background: Theme.bgBase }}
         >
             <h1 className="text-3xl font-bold text-center">Our <span style={{ color: Theme.primary }}>Fleet</span></h1>
