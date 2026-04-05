@@ -24,6 +24,7 @@ export default function RootLayout({
       lang="en"
       className={`${roboto.className} h-full antialiased`}
     >
+
       <body
         className="min-h-screen w-full flex flex-col"
         style={{ background: Theme.bgBase, color: Theme.textPrimary }}

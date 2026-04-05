@@ -3,6 +3,11 @@ import { Metadata } from "next";
 export const RootMetaData: Metadata = {
     title: "Bike & Scooty Rental in Dehradun | Easy Ride Rental",
     description: "Rent bikes and scooty in Dehradun near Mussoorie, Jakhan & DIT University. Affordable daily rentals with easy booking.",
+    icons: {
+        icon: "/logo.png",
+        shortcut: "/logo.png",
+        apple: "/logo.png",
+    },
     keywords: [
 
         "bike rental Dehradun",
