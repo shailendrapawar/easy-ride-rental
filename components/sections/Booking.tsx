@@ -48,7 +48,7 @@ const Booking = () => {
                 Book in <span style={{ color: Theme.primary }}>60 Seconds</span>
             </h1>
 
-            <h3 className="text-center" style={{ color: Theme.textDisabled }}>
+            <h3 className="text-center" style={{ color: Theme.textSecondary }}>
                 Simple, fast, no hassle
             </h3>
 

@@ -24,7 +24,7 @@ const Fleet = () => {
             style={{ background: Theme.bgBase }}
         >
             <h1 className="text-3xl font-bold text-center">Our <span style={{ color: Theme.primary }}>Fleet</span></h1>
-            <p className="text-center text-lg mt-4" style={{ color: Theme.textDisabled }} >Choose from our curated collection of premium two-wheelrs</p>
+            <p className="text-center md:text-lg mt-4" style={{ color: Theme.textDisabled }} >Choose from our curated collection of premium two-wheelrs</p>
 
             <nav className="w-full py-2 justify-center flex gap-3 mt-5">
                 {

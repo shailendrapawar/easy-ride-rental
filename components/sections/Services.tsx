@@ -34,11 +34,13 @@ const Services = () => {
             style={{ background: Theme.bgElevated }}
         >
             {/* Heading */}
-            <h1 className="text-center text-3xl">
+            <h1 className="text-center font-bold  text-3xl">
                 Why<span style={{ color: Theme.primary }}> Easy Ride?</span>
             </h1>
 
-            <h3 className="text-center">
+            <h3 className="text-center" style={{
+                color: Theme.textDisabled
+            }}>
                 Everything you need for a seamless rental experience
             </h3>
 
