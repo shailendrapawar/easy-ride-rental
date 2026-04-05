@@ -9,6 +9,8 @@ import { motion } from "framer-motion"
 import { AppVehicles } from "@/app/data/vehicle-data"
 import { redirectToWhatsApp } from "@/lib/whatsapp"
 
+import { CompanyData } from "@/app/data/company-data"
+
 const Booking = () => {
 
     const [vehiclesList] = useState(AppVehicles.map((v) => v.model))
@@ -30,7 +32,7 @@ const Booking = () => {
     const handleRequestBooking = () => {
         console.log("clicked")
         console.log(formData)
-        redirectToWhatsApp("7456920792", formData)
+        redirectToWhatsApp(CompanyData.bookingRequest.primaryContact.number, formData)
     }
 
     return (

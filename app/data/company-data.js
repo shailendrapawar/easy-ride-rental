@@ -46,6 +46,29 @@ export const CompanyData = {
         google: "https://share.google/8fzUy8eGUI09xeqQ1"
     },
 
-    vehicleTypes: ["Scooty🛵", "Bike🏍️", "Car🚗"]
+    vehicleTypes: ["Scooty🛵", "Bike🏍️", "Car🚗"],
+
+    bookingRequest: {
+        primaryContact: {
+            name: "Shailu",
+            number: "7456920792"
+        },
+        secondaryContact: [
+            {
+                name: "Suraj",
+                number: "7455837395"
+            },
+            {
+                name: "Mridul",
+                number: "9411394637"
+            },
+            {
+                name: "Shubham",
+                number: "9027527132"
+            }
+        ]
+    }
+
+
 
 }
