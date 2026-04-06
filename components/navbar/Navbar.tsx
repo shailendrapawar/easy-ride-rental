@@ -4,16 +4,17 @@ import { CalendarCheck, Menu, X } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { motion, AnimatePresence } from "framer-motion"
+import { scrollToSection } from "@/lib/scroller"
 // import { goTo } from "@/lib/scroller"
 
 const Navbar = () => {
 
 
     const [navItems] = useState([
-        { title: "Vehicles", scrollKey: "vehicles" },
+        { title: "Vehicles", scrollKey: "vehicles-section" },
         { title: "Features", scrollKey: "services" },
-        { title: "Testimonials", scrollKey: "reviews" },
-        { title: "Contact", scrollKey: "booking" }
+        { title: "Testimonials", scrollKey: "reviews-section" },
+        { title: "Contact", scrollKey: "booking-section" }
     ])
 
     const [toggleMobileNav, setToggleMobileNav] = useState(false)
@@ -42,7 +43,7 @@ const Navbar = () => {
                         whileHover={{ y: -2 }}
                         className="min-w-20 flex justify-center cursor-pointer"
                         onClick={() => {
-
+                            scrollToSection(v?.scrollKey)
                         }}
                     >
                         {v.title}
@@ -52,6 +53,9 @@ const Navbar = () => {
                 <Button
                     className="h-10 w-30 rounded-full cursor-pointer transition-all"
                     style={{ background: Theme.primary, color: "black" }}
+                    onClick={() => {
+                        scrollToSection("booking-section")
+                    }}
                 >
                     Book Now
                 </Button>
@@ -79,7 +83,7 @@ const Navbar = () => {
                                     className="w-full flex justify-center items-center h-10 rounded-full cursor-pointer opacity-85 hover:opacity-100"
                                     onClick={() => {
 
-                                        console.log(v?.scrollKey)
+                                        scrollToSection(v?.scrollKey)
                                         setToggleMobileNav(false)
 
                                     }}
@@ -91,7 +95,11 @@ const Navbar = () => {
                             <Button
                                 className="w-full max-w-60 h-10 rounded-full cursor-pointer active:scale-95 transition-all gap-2"
                                 style={{ background: Theme.primary, color: "black" }}
-                                onClick={() => setToggleMobileNav(false)}
+
+                                onClick={() => {
+                                    scrollToSection("booking-section")
+                                    setToggleMobileNav(false)
+                                }}
                             >
                                 Book your ride <CalendarCheck size={16} />
                             </Button>

@@ -3,11 +3,11 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Theme } from "@/app/data/theme"
 import { Button } from "../ui/button"
-import { Command, MoveRight, Zap } from "lucide-react"
+import { MoveRight, Zap } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { CompanyData } from "@/app/data/company-data"
-
+import { scrollToSection } from "@/lib/scroller"
 const Landing = () => {
 
     const { images, vehicleTypes, prices } = CompanyData
@@ -198,6 +198,9 @@ const Landing = () => {
                     <Button
                         className="h-full w-30 sm:w-40 rounded-full cursor-pointer"
                         style={{ border: `2px solid ${Theme.textMuted}` }}
+                        onClick={() => {
+                            scrollToSection("vehicles-section")
+                        }}
                     >
                         View Vehicles
                     </Button>
@@ -205,6 +208,9 @@ const Landing = () => {
                     <Button
                         className="h-full w-30 sm:w-40 rounded-full cursor-pointer transition-all ease-in-out text-yellow-400 hover:bg-yellow-400 hover:text-black shadow-amber-400"
                         style={{ border: `2px solid ${Theme.primary}`, background: Theme.primary, color: Theme.textDark }}
+                        onClick={() => {
+                            scrollToSection("booking-section")
+                        }}
                     >
                         Book Now <MoveRight />
                     </Button>

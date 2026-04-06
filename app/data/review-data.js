@@ -1,22 +1,26 @@
 export const ReviewsData = [
     {
-        author: "Priya Sharma",
-        text: "Super smooth experience! Booked a scooter in minutes and the ride was amazing. Will definitely use again.",
-        rating: 5
+        author: "Preeti Pandit Prajapati",
+        text: "Scooty conditions are very good ..had a great ride thanku for your service 😇💯",
+        rating: 5.0,
+        link: "https://share.google/XbBWEKvTEvEtb3EZK"
     },
     {
-        author: "Shailendra pawar",
-        text: "Super smooth experience! Booked a scooter in minutes and the ride was amazing. Will definitely use again.",
-        rating: 4.5
+        author: "MANVI KAMBOJ",
+        text: "Excellent service 👏 👍🏻, good behavior and conditions of scooty is also excellent.",
+        rating: 5.0,
+        link: "https://share.google/zNTiss7XpbRoVDDHq"
     },
     {
-        author: "Ashish Sharma",
-        text: "Super smooth experience! Booked a scooter in minutes and the ride was amazing. Will definitely use again.",
-        rating: 4.8
+        author: "Mukul Drall",
+        text: "Best service and new branded performance scooty",
+        rating: 5.0,
+        link: "https://share.google/KfHlAdlhPj05Rxpe3"
     },
     {
-        author: "Shailendra pawar",
-        text: "Super smooth experience! Booked a scooter in minutes and the ride was amazing. Will definitely use again.",
-        rating: 4.5
+        author: "Shailendra Pawar",
+        text: "Great availability, fair pricing, and reliable backup support when needed. Smooth experience overall.",
+        rating: 5.0,
+        link: "https://share.google/XbBWEKvTEvEtb3EZK"
     },
 ]
