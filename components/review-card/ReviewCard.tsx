@@ -1,4 +1,5 @@
 import { Theme } from "@/app/data/theme"
+import { MoveUpRight } from 'lucide-react';
 const ReviewCard = ({ data, index }: any) => {
 
     const ratingHandler = (rating: number) => {
@@ -27,23 +28,33 @@ const ReviewCard = ({ data, index }: any) => {
         return result
     }
     return (
-        <section className="flex flex-col items- justify-center gap-3 px-6 py-5  rounded-xl"
+        <section className="flex flex-col h-full justify-center gap-3 px-6 py-5  rounded-xl cursor-pointer"
+
+            title={`See original review by ${data?.author}`}
             style={{
                 background: Theme.bgBase,
                 border: `1px solid ${Theme.borderDefault}`
             }}
+            onClick={() => {
+                if (data?.link) {
+                    window.open(data?.link, "_blank");
+                }
+            }}
         >
 
-            <h3>{ratingHandler(Math.floor(data?.rating))}</h3>
+            <div className="w-auto flex justify-between">
+                <span>{ratingHandler(Math.floor(data?.rating))}</span>
+                <MoveUpRight className="size-4" />
+            </div>
 
             <div className="font-light text-md">
                 {data?.text}
             </div>
 
-            <h3 className="font-bold text-md"
-            style={{
-                color:Theme.textDisabled
-            }}
+            <h3 className="font-light text-md"
+                style={{
+                    color: Theme.textDisabled
+                }}
             > ~ {data?.author}</h3>
 
         </section>

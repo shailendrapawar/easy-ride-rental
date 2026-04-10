@@ -23,7 +23,8 @@ export const CompanyData = {
         pincode: "248009",
         delievery_location: ["jakhan", "malsi"],
         line1: "Near IMS unison, Kuthal Gate",
-        line2: "Mussorie road,"
+        line2: "Mussorie road,",
+        mapLocation: "https://maps.app.goo.gl/cpSYdK4Np7U9VVrNA"
 
     },
     images: [
@@ -43,7 +44,7 @@ export const CompanyData = {
 
     socials: {
         instagram: "https://www.instagram.com/easy_ride_rental_07?igsh=NzBqOTBoOWhydDlu",
-        google: "https://share.google/8fzUy8eGUI09xeqQ1"
+        google: "https://share.google/t4cv6FXmXyv9KuWcR",
     },
 
     vehicleTypes: ["Scooty🛵", "Bike🏍️", "Car🚗"],

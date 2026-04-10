@@ -38,6 +38,7 @@ const Fleet = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
+                viewport={{ once: true }}
             >
                 Our <span style={{ color: Theme.primary }}>Fleet</span>
             </motion.h1>
@@ -48,6 +49,7 @@ const Fleet = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
+                viewport={{ once: true }}
             >
                 Choose from our curated collection of premium two-wheelers
             </motion.p>
@@ -58,6 +60,7 @@ const Fleet = () => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
+                viewport={{ once: true }}
             >
                 {["All", "Bike", "Scooty"].map((v, i) => (
                     <motion.span
@@ -85,7 +88,7 @@ const Fleet = () => {
                 <AnimatePresence mode="popLayout">
                     {vehicles.map((v, i) => (
                         <motion.div
-                            key={i}
+                            key={v?.id}
                             layout
                             initial={{ opacity: 0, scale: 0.9, y: 30 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}

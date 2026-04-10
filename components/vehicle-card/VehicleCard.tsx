@@ -78,7 +78,7 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
                 className="relative h-[30%] flex flex-col justify-center px-4 py-2 gap-3"
             >
                 {/* TITLE */}
-                <div className="h-[30%] relative flex items-center">
+                <div className="h-[25%] relative flex items-center">
                     <span className="flex gap-2 items-center">
                         <h1 className="font-bold text-lg">{data?.model}</h1>
                         <h3
@@ -89,12 +89,12 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
                         </h3>
                     </span>
 
-                    <span className=" absolute right-0">
+                    <span className=" absolute right-0 text-sm">
                         <b
-                            className="text-lg font-bold"
+                            className=" font-bold"
                             style={{ color: Theme.primary }}
                         >
-                            ₹{data?.price?.daily}
+                            ₹{data?.price?.day}
                         </b>
                         /day
                     </span>
@@ -102,7 +102,7 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
 
                 {/* META */}
                 <div
-                    className="h-[20%] flex gap-5 text-sm"
+                    className="h-[15%] flex gap-5 text-sm"
                     style={{ color: Theme.textDisabled }}
                 >
                     <span className="gap-1 flex items-center">
@@ -117,7 +117,7 @@ const VehicleCard = ({ data, index }: { data: any; index: number }) => {
 
                 {/* BUTTON */}
                 <motion.div whileTap={{ scale: 0.96 }} whileHover={{ scale: 1.02 }}
-                    className="h-[30%]"
+                    className="h-[35%] max-h-12"
                 >
                     <Button
                         className="h-full w-full rounded-full cursor-pointer font-medium tracking-wide"

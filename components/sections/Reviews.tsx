@@ -4,7 +4,7 @@ import { Theme } from "@/app/data/theme"
 import { ReviewsData } from "@/app/data/review-data"
 import ReviewCard from "../review-card/ReviewCard"
 import { motion } from "framer-motion"
-
+import { CompanyData } from "@/app/data/company-data"
 const Reviews = () => {
 
     // animations
@@ -71,6 +71,13 @@ const Reviews = () => {
                     ))
                 }
             </motion.div>
+
+            <div className=" cursor-pointer flex items-center justify-center rounded-full px-4 py-5  gap-1 h-8 text-sm  opacity-70 hover:opacity-100"
+                style={{ background: Theme.primary, color: Theme.textInverse }}
+                onClick={() => {
+                    window.open(CompanyData?.socials?.google, "_blank");
+                }}
+            > 😜 See All reviews</div>
 
         </motion.section>
     )

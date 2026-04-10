@@ -7,12 +7,14 @@ import { MapPin, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 import { CompanyData } from "@/app/data/company-data"
 
+import { IoLogoGoogle } from "react-icons/io5";
 
 const Footer = () => {
 
     const description = "Premium two-wheeler rentals for city explorers. Affordable, safe, and always ready to roll."
     const address = "MG Road, Central Hub, Bengaluru 560001"
     const { instagram, google } = CompanyData.socials
+    const { line1, line2, city, mapLocation } = CompanyData.address
     // animations
     const container = {
         hidden: {},
@@ -26,6 +28,16 @@ const Footer = () => {
     const item = {
         hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0 }
+    }
+
+    const linkMap: Record<string, string> = {
+        google: google,
+        instagram: instagram,
+        mapLocation: mapLocation
+    }
+
+    const visitLink = (key: string) => {
+        window.open(linkMap[key], "_blank");
     }
 
     return (
@@ -65,6 +77,7 @@ const Footer = () => {
                             whileTap={{ scale: 0.95 }}
                             className="p-2 rounded-full"
                             style={{ background: Theme.bgSubtle }}
+                            onClick={() => visitLink("instagram")}
                         >
                             <FaInstagram className="size-5 cursor-pointer" style={{ color: Theme.textDisabled }} />
                         </motion.span>
@@ -74,8 +87,9 @@ const Footer = () => {
                             whileTap={{ scale: 0.95 }}
                             className="p-2 rounded-full"
                             style={{ background: Theme.bgSubtle }}
+                            onClick={() => visitLink("google")}
                         >
-                            <FiFacebook className="size-5 cursor-pointer" style={{ color: Theme.textDisabled }} />
+                            <IoLogoGoogle className="size-5 cursor-pointer" style={{ color: Theme.textDisabled }} />
                         </motion.span>
                     </div>
                 </motion.div>
@@ -121,13 +135,17 @@ const Footer = () => {
 
                         <motion.span
                             whileHover={{ x: 5 }}
-                            className="flex gap-2"
+                            className="flex gap-2 cursor-pointer"
+                            onClick={() => {
+                                visitLink("mapLocation")
+                            }}
+                            title={"Visit location"}
                         >
                             <MapPin className="size-6" />
                             <span className="text-sm">
-                                {CompanyData?.address?.line1},<br />
-                                {" " + CompanyData?.address?.line2}<br />
-                                {CompanyData?.address?.city?.toUpperCase()}
+                                {line1 || ""},<br />
+                                {" " + line2 || ""}<br />
+                                {city?.toUpperCase()}
 
                             </span>
                         </motion.span>
