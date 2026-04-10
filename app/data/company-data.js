@@ -51,8 +51,8 @@ export const CompanyData = {
 
     bookingRequest: {
         primaryContact: {
-            name: "Suraj",
-            number: "7455837395"
+            name: "Shubham",
+            number: "9286252423"
         },
         secondaryContact: [
             {
@@ -65,7 +65,7 @@ export const CompanyData = {
             },
             {
                 name: "Shubham",
-                number: "9027527132"
+                number: "9286252423"
             },
             {
                 name: "Shailu",
